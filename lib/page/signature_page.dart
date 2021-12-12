@@ -19,7 +19,7 @@ class _SignaturePageState extends State<SignaturePage> {
 
     controller = SignatureController(
       penStrokeWidth: 5,
-      penColor: Colors.white,
+      penColor: Colors.black,
     );
   }
 
@@ -35,7 +35,7 @@ class _SignaturePageState extends State<SignaturePage> {
           children: <Widget>[
             Signature(
               controller: controller,
-              backgroundColor: Colors.black,
+              backgroundColor: Colors.white,
             ),
             buildButtons(context),
             buildSwapOrientation(),
@@ -114,8 +114,8 @@ class _SignaturePageState extends State<SignaturePage> {
   Future<Uint8List> exportSignature() async {
     final exportController = SignatureController(
       penStrokeWidth: 2,
-      penColor: Colors.black,
-      exportBackgroundColor: Colors.white,
+      penColor: Colors.white,
+      exportBackgroundColor: Colors.transparent,
       points: controller.points,
     );
 
